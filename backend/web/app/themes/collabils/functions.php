@@ -13,6 +13,8 @@ add_action('init', 'collabils_register_menu');
 function collabils_enqueue_scripts()
 {
     wp_enqueue_style('collabils', get_template_directory_uri() . '/assets/css/index.css');
+    wp_enqueue_script( 'search', get_template_directory_uri() . '/js/search.js', array( 'jquery', 'vue', 'axios' ), '1.0.0', true );
+
 }
 add_action('wp_enqueue_scripts', 'collabils_enqueue_scripts');
-?>
+

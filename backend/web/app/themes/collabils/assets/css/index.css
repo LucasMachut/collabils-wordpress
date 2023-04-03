@@ -63,7 +63,10 @@ h2{
 }
 h3 {
   text-align: center;
-}
+  font-family: "Joseffin+Sans";
+  font-size: 1.8em;
+  margin: 0.5rem auto;
+  line-height: 1.2em;}
 
 .main-container {
   width: 100%;
@@ -133,3 +136,171 @@ p {
 .presentation-image img{
     width:100%;
 }
+
+/**********NAV**********/
+
+.menu__list{
+    display: flex;
+    width: 100%;
+    height: 20vh;
+    background-color: #12111f2b;
+  }
+nav ul{
+width: 100%;
+height: 100%;
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+
+
+
+.search-container {
+  margin: 5em auto;
+  text-align: center;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.search-field {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  box-shadow: none;
+  font-size: 1em;
+}
+
+.search-submit {
+  display: inline-block;
+  padding: 0.5em 1em;
+  border: 1px solid #ccc;
+  border-radius: 0 5px 5px 0;
+  box-shadow: none;
+  font-size: 1em;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.display-signs-container{
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sign-item{
+  width: 20%;
+  height: 20vh;
+  border: solid 1px white;
+  margin: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign-item:hover{
+  box-shadow: #FD3C00 0px 7px 29px 0px;
+}
+
+h3{
+
+  color: white;
+}
+
+
+/*************Single signe*************/
+.single-signe-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.video-container{
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+}
+
+.video-container video {
+  display: block;
+  margin: 0 auto;
+}
+.categorie-container {
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.definition-container {
+  width: 60%;
+  border: 2px solid white;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.contexte-container {
+  width: 60%;
+  border: 2px solid white;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Style pour les smartphones */
+@media only screen and (max-width: 767px) {
+  .single-signe-container {
+    padding: 20px;
+  }
+  .video-container {
+    width: 100%;
+    padding: 20px;
+  }
+  .video-container iframe {
+    width: 100%;
+  }
+  .categorie-container {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 20px;
+  }
+  .definition-container {
+    padding: 20px;
+  }
+  .contexte-container {
+    padding: 20px;
+  }
+}
+
+/* Style pour les tablettes */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .single-signe-container {
+    padding: 40px;
+  }
+  .video-container {
+    width: 80%;
+  }
+  .categorie-container {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 20px;
+  }
+  .definition-container {
+    padding: 20px;
+  }
+  .contexte-container {
+    padding: 20px;
+  }
+}
+
+</style>

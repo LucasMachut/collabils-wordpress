@@ -5,7 +5,7 @@ get_header();
 ?>
 
 <body>
-<?php get_template_part('template_parts/header_menu') ?>
+<?php get_template_part('template_parts/header_menu.php') ?>
 
 <main>
       <div class="container-fluid">
