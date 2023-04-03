@@ -1,0 +1,1 @@
+/var/www/html/perso/backendcollabils/backend/web/app/plugins/query-monitor/wp-content/db.php
