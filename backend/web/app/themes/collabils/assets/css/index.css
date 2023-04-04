@@ -154,7 +154,7 @@ align-items: center;
 }
 
 
-
+/************ARCHIVE SIGNES**********/
 .search-container {
   margin: 5em auto;
   text-align: center;
@@ -294,6 +294,7 @@ h3{
     margin-top: 40px;
     margin-bottom: 40px;
     padding: 20px;
+    text-align: center;
   }
   .definition-container {
     padding: 20px;
@@ -302,5 +303,68 @@ h3{
     padding: 20px;
   }
 }
+/************TAG***********/
 
-</style>
+/***********FORM DEMANDE*********/
+/* Mettre le label au-dessus du champ */
+.content-area{
+  width: 70%;
+  margin: auto;
+}
+#demande-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 3rem;
+  padding: 1rem;
+  width: 90%;
+  height: 20vh;
+  border: solid 1px white;
+}
+.form-item:hover{
+  box-shadow: #FD3C00 0px 7px 29px 0px;
+}
+
+/***********ARCHIVE DEMANDES**********/
+.display-demandes-container{
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+}
+
+.demande-item{
+  width: 20%;
+  height: 20vh;
+  border: solid 1px white;
+  margin: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.demande-item:hover{
+  box-shadow: #FD3C00 0px 7px 29px 0px;
+}
+.categorie-container, .contexte-container, .definition-container {
+  width: 60%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+.categorie-container, .date-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
