@@ -384,3 +384,71 @@ h3{
   align-items: center;
 }
 
+/*******INSCRIPTION ET CONNEXION*********/
+/* Styles pour les formulaires */
+form {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 20px auto;
+  max-width: 500px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+form input[type=text],
+form input[type=email],
+form input[type=password],
+form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+form input[type=submit],
+form button {
+  background-color: #0073aa;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+form input[type=submit]:hover,
+form button:hover {
+  background-color: #005c82;
+}
+
+form .error {
+  color: red;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+/* Styles pour les messages d'erreur */
+.alert {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+}
+
+.alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+}
+
+.alert-danger {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+}
