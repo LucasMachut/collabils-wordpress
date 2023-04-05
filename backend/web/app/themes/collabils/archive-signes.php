@@ -10,13 +10,13 @@ get_header();
 <div class="signes-list">
   <h1>Tous les Signes</h1>
   <div class="search-container">
-    <form role="search" method="get" class="search-form" action="">
-      <label>
-        <span class="screen-reader-text"><?php echo _x( 'Recherche de :', 'label' ); ?></span>
-        <input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Recherche &hellip;', 'placeholder' ); ?>" value="" name="s" id="search-input" />
-      </label>
-      <button type="submit" class="search-submit" id="search-button"><?php echo esc_attr_x( 'Recherche', 'submit button' ); ?></button>
+    <!-- Ajoutez un formulaire HTML pour la barre de recherche -->
+    <form id="search-form">
+      <input type="text" id="search-input" placeholder="Rechercher un signe...">
+      <button type="submit">Rechercher</button>
     </form>
+    <!-- Ajoutez une div pour afficher les résultats de la recherche -->
+    <div id="search-results"></div>
   </div>
 
   <div class="display-signs-container">

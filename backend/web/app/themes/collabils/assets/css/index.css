@@ -155,38 +155,44 @@ align-items: center;
 
 
 /************ARCHIVE SIGNES**********/
-.search-container {
-  margin: 5em auto;
-  text-align: center;
-}
 
-.search-form {
+.search-container {
+  margin: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2em;
+  flex-direction: column;
+}
+#search-form{
+  display: flex;
+  flex-direction: column;
 }
 
-.search-field {
-  width: 100%;
-  max-width: 400px;
-  padding: 0.5em;
-  border: 1px solid #ccc;
-  border-radius: 5px 0 0 5px;
-  box-shadow: none;
-  font-size: 1em;
+#search-input {
+  padding: 8px;
+  font-size: 14px;
+  width: 300px;
 }
 
-.search-submit {
+#search-results {
+  width: 100%;  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+#search-results .sign-item {
   display: inline-block;
-  padding: 0.5em 1em;
-  border: 1px solid #ccc;
-  border-radius: 0 5px 5px 0;
-  box-shadow: none;
-  font-size: 1em;
-  background-color: #fff;
-  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px;
 }
+#sign-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .display-signs-container{
   width: 90%;

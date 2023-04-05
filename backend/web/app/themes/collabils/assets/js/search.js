@@ -1,30 +1,17 @@
-$(function() {
-  var $searchForm = $('.search-form');
-  var $searchInput = $('#search-input');
-  var $searchButton = $('#search-button');
-  var $signsContainer = $('.display-signs-container');
+document.getElementById("search-form").addEventListener("submit", function(event) {
+  event.preventDefault();
 
-  $searchForm.on('submit', function(e) {
-    e.preventDefault();
+  const searchTerm = document.getElementById("search-input").value.toLowerCase();
+  const signItems = document.querySelectorAll(".sign-item");
 
-    // Récupérer la valeur de la recherche
-    var query = $searchInput.val();
+  document.getElementById("search-results").innerHTML = "";
 
-    // Envoyer la requête de recherche via AJAX
-    $.ajax({
-      url: '/wp-admin/admin-ajax.php',
-      method: 'POST',
-      data: {
-        action: 'search_signes',
-        query: query
-      },
-      success: function(response) {
-        // Mettre à jour l'affichage avec les résultats
-        $signsContainer.html(response);
-      },
-      error: function(jqXHR, textStatus, errorThrown) {
-        console.error(errorThrown);
-      }
-    });
+  signItems.forEach(item => {
+    const signTitle = item.querySelector("h3").textContent.toLowerCase();
+
+    if (signTitle.includes(searchTerm)) {
+      const searchResult = item.cloneNode(true);
+      document.getElementById("search-results").appendChild(searchResult);
+    }
   });
 });
