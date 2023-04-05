@@ -1,7 +1,7 @@
 <?php
 ?>
 
-<header class="header">
+<div class="nav-container">
     <?php 
     wp_nav_menu([
         'theme_location' => "menu_light",
@@ -10,4 +10,4 @@
         'menu_class' => 'menu__list'
     ]);
     ?>
-  </header>
+  </div>

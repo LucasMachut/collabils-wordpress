@@ -17,6 +17,6 @@
     <?php wp_head() ?>
 </head>
 <body>
-    
-</body>
-</html>
+<?php get_template_part('template_parts/header_menu.php') ?>
+
+  

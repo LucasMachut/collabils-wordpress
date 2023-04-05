@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Josefin+Sans:wght@300&family=Play&family=Rambla&display=swap');
 
-  html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
     border: 0;
@@ -14,13 +14,20 @@
     font-size: medium;
     line-height: 2em;
   }
-  article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  article, aside, details, figcaption, figure, footer, hgroup, menu, nav, section {
     display: block;
   }
 
   ol, ul {
     list-style: none;
   }
+  li {
+    list-style-type: none;
+    }
+  a:link, a:visited{
+    text-decoration: none;
+    color: #bcbcbc;
+    }
 
   blockquote, q {
     quotes: none;
@@ -68,6 +75,10 @@ h3 {
   margin: 0.5rem auto;
   line-height: 1.2em;}
 
+header{
+  margin-bottom: 3rem;
+  display: flex;
+  }
 .main-container {
   width: 100%;
   height: 100vh;
@@ -90,13 +101,6 @@ background: linear-gradient(180deg, rgba(242,139,0,1) 70%, rgba(242,37,47,1) 98%
         width: 200px;
 }
 
-.header{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 .presentation-container{
     height: 100vh;
     width: 50%;
@@ -124,6 +128,9 @@ background: linear-gradient(180deg, rgba(242,139,0,1) 70%, rgba(242,37,47,1) 98%
     padding: 10% 5%;
     text-align: center;
 }
+.presentation-text p{
+  font-size: larger;
+}
 p {
     font-size: medium;
 }
@@ -138,13 +145,16 @@ p {
 }
 
 /**********NAV**********/
-
+.nav-container{
+  margin-bottom: 4rem;
+}
 .menu__list{
-    display: flex;
-    width: 100%;
-    height: 20vh;
-    background-color: #12111f2b;
-  }
+  display: flex;
+  width: 100%;
+  height: 20vh;
+  background-color: #12111f2b;
+  box-shadow: rgba(255, 255, 255, 0.489) 0px 2px 3px;
+}
 nav ul{
 width: 100%;
 height: 100%;

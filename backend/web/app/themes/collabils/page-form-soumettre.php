@@ -42,6 +42,8 @@ if (isset($_POST['signe_title']) && isset($_POST['signe_context']) && isset($_PO
 
 // Afficher le formulaire de création de signe
 get_header(); ?>
+<?php get_template_part('template_parts/header_menu.php') ?>
+
 
 <h1>Créer un signe</h1>
 

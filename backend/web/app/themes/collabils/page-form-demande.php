@@ -47,6 +47,8 @@ if (isset($_POST['demande_title']) && isset($_POST['demande_date']) && isset($_P
 
 // Afficher le formulaire de demande
 get_header(); ?>
+<?php get_template_part('template_parts/header_menu.php') ?>
+
 
 <h1>Demander un signe</h1>
 

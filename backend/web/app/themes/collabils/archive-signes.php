@@ -7,6 +7,8 @@
 get_header();
 ?>
 
+<?php get_template_part('template_parts/header_menu') ?>
+
 <div class="signes-list">
   <h1>Tous les Signes</h1>
   <div class="search-container">
