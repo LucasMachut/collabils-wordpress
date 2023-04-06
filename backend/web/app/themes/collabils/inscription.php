@@ -4,10 +4,10 @@
  */
 
 // Rediriger l'utilisateur s'il est déjà connecté
-/* if (is_user_logged_in()) {
+if (is_user_logged_in()) {
     wp_redirect(home_url());
     exit;
-} */
+}
 
 // Traiter le formulaire d'inscription s'il est soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

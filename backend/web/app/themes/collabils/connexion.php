@@ -4,10 +4,11 @@
  */
 
 // Rediriger l'utilisateur s'il est déjà connecté
-/* if (is_user_logged_in()) {
+if (is_user_logged_in()) {
     wp_redirect(home_url());
     exit;
-} */
+}
+
 
 // Traiter le formulaire de connexion s'il est soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -34,7 +35,7 @@ get_header();
                             <?php endforeach; ?>
                         </div>
                     <?php endif; ?>
-                    <form method="post">
+                    <form method="post" enctype="multipart/form-data">
                         <p>
                             <label for="user_login"><?php _e('Username or Email', 'collabils'); ?><br />
                                 <input type="text" name="log" id="user_login" class="input" value="<?php echo esc_attr(wp_unslash($_POST['log'] ?? '')); ?>" size="25" /></label>
@@ -49,9 +50,11 @@ get_header();
                             <input type="submit" class="button" value="<?php _e('Log In', 'collabils'); ?>" />
                         </p>
                     </form>
+
+
                 </div>
             </div>
-            <div class="redirect-inscription d-flex justify-content-center">
+            <div class="redirect-inscription">
                 <p>Vous n'êtes pas encore inscrit ?</p>
                 <a href="<?php echo home_url('/registration/'); ?>"><button class="bouton1">inscription</button></a>
             </div>
