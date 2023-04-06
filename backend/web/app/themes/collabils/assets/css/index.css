@@ -452,3 +452,10 @@ form .error {
   border-color: #ebccd1;
   color: #a94442;
 }
+.redirect-inscription{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem;
+}

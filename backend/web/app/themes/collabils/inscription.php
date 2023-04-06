@@ -13,18 +13,18 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $errors = collabils_check_errors(new WP_Error(), '', '');
     if (empty($errors->errors)) {
-        $user_id = wp_create_user($_POST['user_login'], $_POST['password'], $_POST['email']);
+        $user_id = wp_create_user($_POST['pseudo'], $_POST['password'], $_POST['email']);
         if (is_wp_error($user_id)) {
             $errors->add('collabils_registration_error', $user_id->get_error_message());
         } else {
             collabils_register_user_update($user_id);
-            wp_safe_redirect(wp_login_url());
+            wp_safe_redirect(home_url('/connexion/'));
             exit;
         }
     }
 }
 
-function collabils_check_errors($errors, $user_login, $user_email)
+function collabils_check_errors($errors, $user_pseudo, $user_email)
 {
     // On vérifie que tous les champs sont remplis
     if (empty($_POST['first_name'])) {
@@ -57,18 +57,17 @@ function collabils_check_errors($errors, $user_login, $user_email)
 
     // On vérifie que l'email n'est pas déjà utilisé
     if (email_exists($_POST['email'])) {
-        $errors->add('collabils_registration_error', __('This email address is already registered.', 'collabils'));
-    }
-
-    // On vérifie que le pseudo n'est pas déjà utilisé
-    if (username_exists($_POST['pseudo'])) {
-        $errors->add('collabils_registration_error', __('This username is already taken.', 'collabils'));
+        $errors->add('collabils_registration_error', __('This email address or pseudo is already registered.', 'collabils'));
     }
 
     // On vérifie que le rôle est valide
     if ($_POST['role'] !== 'etudiant' && $_POST['role'] !== 'interprete') {
         $errors->add('collabils_registration_error', __('Invalid role.', 'collabils'));
     }
+    if (empty($_POST['pseudo'])) {
+        $errors->add('collabils_registration_error', __('You must enter a pseudo.', 'collabils'));
+    }
+    
 
     return $errors;
 }
@@ -144,10 +143,10 @@ get_header();
                         </div>
                     <?php endif; ?>
                     <form method="post">
-                        <p>
-                            <label for="user_login"><?php _e('Username', 'collabils'); ?><br />
-                                <input type="text" name="user_login" id="user_login" class="input" value="<?php echo esc_attr(wp_unslash($_POST['user_login'] ?? '')); ?>" size="25" /></label>
-                        </p>
+                    <p>
+                        <label for="pseudo"><?php _e('Pseudo', 'collabils'); ?><br />
+                            <input type="text" name="pseudo" id="pseudo" class="input" value="<?php echo esc_attr(wp_unslash($_POST['pseudo'] ?? '')); ?>" size="25" /></label>
+                    </p>
 
                         <p>
                             <label for="password"><?php _e('Password', 'collabils'); ?><br />
@@ -165,15 +164,10 @@ get_header();
                         </p>
 
                         <p>
-                            <label for="pseudo"><?php _e('Pseudo', 'collabils'); ?><br />
-                                <input type="text" name="pseudo" id="pseudo" class="input" value="<?php echo esc_attr(wp_unslash($_POST['pseudo'] ?? '')); ?>" size="25" /></label>
-                        </p>
-
-                        <p>
                             <label for="email"><?php _e('Email', 'collabils'); ?><br />
-<input type="email" name="email" id="email" class="input" value="<?php echo esc_attr(wp_unslash($_POST['email'] ?? '')); ?>" size="25" /></label>
-</p>
-<p>
+                            <input type="email" name="email" id="email" class="input" value="<?php echo esc_attr(wp_unslash($_POST['email'] ?? '')); ?>" size="25" /></label>
+                        </p>
+                        <p>
                         <label for="role"><?php _e('Role', 'collabils'); ?><br />
                             <select name="role" id="role">
                                 <option value="etudiant"<?php selected($_POST['role'] ?? '', 'etudiant'); ?>><?php _e('Etudiant', 'collabils'); ?></option>

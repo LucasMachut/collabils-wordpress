@@ -51,6 +51,11 @@ get_header();
                     </form>
                 </div>
             </div>
+            <div class="redirect-inscription d-flex justify-content-center">
+                <p>Vous n'êtes pas encore inscrit ?</p>
+                <a href="<?php echo home_url('/registration/'); ?>"><button class="bouton1">inscription</button></a>
+            </div>
+
         </div>
     </main>
 </div>

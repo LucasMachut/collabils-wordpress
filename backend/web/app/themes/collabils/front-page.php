@@ -13,7 +13,7 @@ get_header();
         <div class="presentation-container">
             <h1><?php the_field('accueil-titre-1'); ?></h1>
             <h2><?php the_field('accueil-soustitre-1'); ?></h2>
-            <a href="page-de-connexion.html"><button class="bouton1">Se connecter</button></a>
+            <a href="<?php echo home_url('/connexion/'); ?>"><button class="bouton1">Se connecter</button></a>
 
         </div>
         <div class="image-container">
@@ -27,7 +27,7 @@ get_header();
             </div>
             <div class="presentation-text">
                 <p><?php the_field('accueil-text-presentation'); ?></p>
-                <a href="page-de-connexion.html"><button class="bouton1">Se connecter</button></a>
+                <a href="<?php echo home_url('/connexion/'); ?>"><button class="bouton1">Se connecter</button></a>
             </div>
         </div>
       </div>
