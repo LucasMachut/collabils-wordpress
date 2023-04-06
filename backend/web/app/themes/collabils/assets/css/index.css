@@ -161,6 +161,10 @@ p {
     margin: 1rem 0.5rem;
     padding: 2rem;
   }
+  h2 {
+    font-size: 2em;
+    margin: 0.5rem 0.5rem;
+  }
   .header {
     flex-direction: column;
   }
@@ -175,6 +179,8 @@ p {
   }
   .image-container {
     width: 100%;
+    order: 1;
+
   }
 
   .presentation {
@@ -190,6 +196,8 @@ p {
   }
   .presentation-container {
     padding: 0;
+    order: 2;
+
   }
 
   .nav-container .menu__list {
@@ -212,7 +220,12 @@ p {
     display: flex;
     max-height: 300px;
   }
+  
+  .image-container{
+    order: 1;
+  }
 }
+
 
 
 
@@ -274,6 +287,12 @@ p {
 
 /* Responsive styles */
 @media (max-width: 768px) {
+  #menuList{
+    padding: 10px;
+  }
+  .nav-container {
+    box-shadow: none;
+  }
   .nav-container .menu__list {
       display: none;
   }
