@@ -7,22 +7,18 @@ get_header();
 <body>
 <?php if ( is_user_logged_in()) : ?>
 
- <div class="nav-container">
-  <?php 
-    wp_nav_menu([
-      'theme_location' => "menu_light",
-      'container' => 'nav',
-      'container_class' => 'navbar navbar-expand-md navbar-dark fixed-top',
-      'menu_class' => 'menu__list',
-      'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
-      'walker' => new WP_Bootstrap_Navwalker()
-    ]);
-  ?>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <div class="nav-container">
+    <div class="nav-toggle">
+        <span>&#9776;</span>
+    </div>
+    <?php 
+        wp_nav_menu([
+            'theme_location' => "menu_light",
+            'container' => 'nav',
+            'menu_class' => 'menu__list',
+        ]);
+    ?>
 </div>
-
 
 <?php endif; ?>
 <main>
@@ -50,6 +46,15 @@ get_header();
         </div>
       </div>
     </main>
+
+    <script>
+    document.querySelector('.nav-toggle').addEventListener('click', function () {
+    const navContainer = document.querySelector('.nav-container');
+    navContainer.classList.toggle('responsive');
+});
+
+</script>
+
 <?php
 get_footer();
 ?>

@@ -7,8 +7,18 @@
 get_header();
 ?>
 
-<?php get_template_part('template_parts/header_menu') ?>
+<div class="nav-container">
+    <?php 
+    wp_nav_menu([
+        'theme_location' => "menu_light",
+        'container' => 'nav',
+        'container_class' => 'menu navbar-expand-sm navbar-dark fixed-top',
+        'menu_class' => 'menu__list'
+    ]);
+    ?>
+  </div>
 
+  
 <div class="signes-list">
   <h1>Tous les Signes</h1>
   <div class="search-container">

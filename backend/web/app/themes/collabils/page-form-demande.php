@@ -48,8 +48,8 @@ if (isset($_POST['demande_title']) && isset($_POST['demande_date']) && isset($_P
 // Afficher le formulaire de demande
 get_header(); ?>
 
-<?php if ( is_user_logged_in()) : ?>
-  <div class="nav-container">
+
+<div class="nav-container">
     <?php 
     wp_nav_menu([
         'theme_location' => "menu_light",
@@ -59,9 +59,6 @@ get_header(); ?>
     ]);
     ?>
   </div>
-<?php endif; ?>
-
-
 
 <h1>Demander un signe</h1>
 

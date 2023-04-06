@@ -69,4 +69,16 @@ get_header();
   <?php endif; ?>
 </div>
 
+<?php
+if (!post_password_required()) {
+    $comments_open = true;
+    
+    if ($comments_open || get_comments_number()) {
+        comments_template();
+    }
+}
+?>
+
+
+
 <?php get_footer(); ?>

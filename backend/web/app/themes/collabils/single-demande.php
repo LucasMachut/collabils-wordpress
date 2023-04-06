@@ -3,7 +3,16 @@
 
 get_header();
 ?>
-
+<div class="nav-container">
+    <?php 
+    wp_nav_menu([
+        'theme_location' => "menu_light",
+        'container' => 'nav',
+        'container_class' => 'menu navbar-expand-sm navbar-dark fixed-top',
+        'menu_class' => 'menu__list'
+    ]);
+    ?>
+  </div>
 <div class="single-demande-container">
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 

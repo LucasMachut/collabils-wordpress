@@ -16,6 +16,8 @@ get_header();
     ]);
     ?>
   </div>
+
+  
 <div class="main-container">
   <h1>Toutes les catégories</h1>
   <div class="display-demandes-container">
