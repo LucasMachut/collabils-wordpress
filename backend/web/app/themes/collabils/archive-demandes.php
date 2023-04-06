@@ -6,7 +6,16 @@
 
 get_header();
 ?>
-
+<div class="nav-container">
+    <?php 
+    wp_nav_menu([
+        'theme_location' => "menu_light",
+        'container' => 'nav',
+        'container_class' => 'menu navbar-expand-sm navbar-dark fixed-top',
+        'menu_class' => 'menu__list'
+    ]);
+    ?>
+  </div>
 <div class="demandes-list">
   <h1>Toutes les demandes</h1>
   <div class="display-demandes-container">

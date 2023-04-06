@@ -47,7 +47,20 @@ if (isset($_POST['demande_title']) && isset($_POST['demande_date']) && isset($_P
 
 // Afficher le formulaire de demande
 get_header(); ?>
-<?php get_template_part('template_parts/header_menu.php') ?>
+
+<?php if ( is_user_logged_in()) : ?>
+  <div class="nav-container">
+    <?php 
+    wp_nav_menu([
+        'theme_location' => "menu_light",
+        'container' => 'nav',
+        'container_class' => 'menu navbar-expand-sm navbar-dark fixed-top',
+        'menu_class' => 'menu__list'
+    ]);
+    ?>
+  </div>
+<?php endif; ?>
+
 
 
 <h1>Demander un signe</h1>

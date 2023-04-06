@@ -6,8 +6,16 @@
 
 get_header();
 ?>
-<?php get_template_part('template_parts/header_menu.php') ?>
-
+<div class="nav-container">
+    <?php 
+    wp_nav_menu([
+        'theme_location' => "menu_light",
+        'container' => 'nav',
+        'container_class' => 'menu navbar-expand-sm navbar-dark fixed-top',
+        'menu_class' => 'menu__list'
+    ]);
+    ?>
+  </div>
 <div class="main-container">
   <h1>Toutes les catégories</h1>
   <div class="display-demandes-container">

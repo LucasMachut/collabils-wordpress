@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Josefin+Sans:wght@300&family=Play&family=Rambla&display=swap');
+@import "~bootstrap/scss/bootstrap";
+@import 'bootstrap/dist/js/bootstrap';
 
   html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     font: inherit;
@@ -59,6 +61,7 @@ h1{
   font-family: "Audiowide";
   font-size: 4em;
   margin: 1rem auto;
+  padding: 3rem;
 
 }
 h2{
@@ -84,8 +87,6 @@ header{
   height: 100vh;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
 }
 .bouton1 {
   background: rgb(242,139,0);
@@ -148,20 +149,42 @@ p {
 .nav-container{
   margin-bottom: 4rem;
 }
+
 .menu__list{
   display: flex;
   width: 100%;
-  height: 20vh;
+  height: 10vh;
   background-color: #12111f2b;
   box-shadow: rgba(255, 255, 255, 0.489) 0px 2px 3px;
+  position: fixed;
+  top: 0;
+  margin-top: 2rem;
 }
+
+
+.menu-item{
+  color: #FD3C00;
+}
+
 nav ul{
-width: 100%;
-height: 100%;
-display: flex;
-justify-content: space-around;
-align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
+
+
+@media screen and (max-width: 768px) {
+  .menu__list {
+    flex-direction: column;
+    height: auto;
+  }
+  .menu-item {
+    margin: 0.5rem 0;
+  }
+}
+
 
 
 /************ARCHIVE SIGNES**********/
@@ -337,14 +360,18 @@ h3{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 3rem;
-  padding: 1rem;
   width: 90%;
+  margin: auto;
   height: 20vh;
-  border: solid 1px white;
 }
-.form-item:hover{
-  box-shadow: #FD3C00 0px 7px 29px 0px;
+.form-item input:hover{
+  box-shadow: #FD3C00 0px 7px 50px 0px;
+}
+.form-item textarea:hover{
+  box-shadow: #FD3C00 0px 7px 50px 0px;
+}
+.form-item select:hover{
+  box-shadow: #FD3C00 0px 7px 50px 0px;
 }
 
 /***********ARCHIVE DEMANDES**********/

@@ -5,8 +5,26 @@ get_header();
 ?>
 
 <body>
-<?php get_template_part('template_parts/header_menu.php') ?>
+<?php if ( is_user_logged_in()) : ?>
 
+ <div class="nav-container">
+  <?php 
+    wp_nav_menu([
+      'theme_location' => "menu_light",
+      'container' => 'nav',
+      'container_class' => 'navbar navbar-expand-md navbar-dark fixed-top',
+      'menu_class' => 'menu__list',
+      'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
+      'walker' => new WP_Bootstrap_Navwalker()
+    ]);
+  ?>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</div>
+
+
+<?php endif; ?>
 <main>
       <div class="container-fluid">
       <header class="header">
