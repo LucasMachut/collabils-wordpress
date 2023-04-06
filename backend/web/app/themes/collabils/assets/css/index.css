@@ -91,16 +91,16 @@ header{
 }
 .bouton1 {
   background: rgb(242,139,0);
-background: linear-gradient(180deg, rgba(242,139,0,1) 70%, rgba(242,37,47,1) 98%);
-        padding: 15px 32px;
-        margin: 2.5rem;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        cursor: pointer;
-        border-radius: 50px;
-        width: 200px;
+  background: linear-gradient(180deg, rgba(242,139,0,1) 70%, rgba(242,37,47,1) 98%);
+  padding: 15px 32px;
+  margin: 2.5rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 50px;
+  width: 200px;
 }
 
 .presentation-container{
@@ -152,12 +152,15 @@ p {
 
 /* Responsive styles */
 @media (max-width: 768px) {
+  .bouton1{
+    margin:0;
+  }
   html, body {
     max-width: 100%;
     overflow-x: hidden;
   }
   h1 {
-    font-size: 3em;
+    font-size: 2em;
     margin: 1rem 0.5rem;
     padding: 2rem;
   }
@@ -292,6 +295,7 @@ p {
   }
   .nav-container {
     box-shadow: none;
+    background-color: rgba(0, 0, 0, 0);
   }
   .nav-container .menu__list {
       display: none;
@@ -391,6 +395,57 @@ p {
 h3{
 
   color: white;
+}
+/* Responsive styles */
+@media (max-width: 768px) {
+  .nav-container .menu__list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .nav-container .nav-toggle {
+    display: block;
+  }
+
+  .nav-container.responsive .menu__list {
+    display: flex;
+    max-height: 300px;
+  }
+
+  .search-container {
+    margin: 1rem;
+  }
+
+  #search-input {
+    width: 100%;
+    max-width: 300px;
+    margin: 1rem auto;
+  }
+
+  .sign-item {
+    width: 70%;
+    height: 30vh;
+    margin: 1rem;
+  }
+
+  .display-signs-container {
+    width: 90%;
+    margin: 2rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  h3{
+    font-size: medium;
+  }
 }
 
 
@@ -510,6 +565,15 @@ h3{
 }
 .form-item select:hover{
   box-shadow: #FD3C00 0px 7px 50px 0px;
+}
+@media only screen and (max-width: 767px) {
+  .content-area{
+    width: 90%;
+    margin: auto;
+  }
+  #signe-form{
+    padding: 0;
+  }
 }
 
 /***********ARCHIVE DEMANDES**********/

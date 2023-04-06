@@ -5,8 +5,19 @@
 get_header();
 ?>
 
-<?php get_template_part('template_parts/header_menu.php') ?>
-
+<div class="nav-container">
+  <div class="nav-toggle">
+    <span>&#9776;</span>
+  </div>
+  <?php 
+    wp_nav_menu([
+        'theme_location' => "menu_light",
+        'container' => 'nav',
+        'menu_class' => 'menu__list',
+        'menu_id' => 'menuList',
+    ]);
+  ?>
+</div>
 
 <?php echo do_shortcode('[ultimatemember form_id="148"]'); ?>
 <style>

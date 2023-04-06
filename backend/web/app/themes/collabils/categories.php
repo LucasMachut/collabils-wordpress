@@ -7,20 +7,23 @@
 get_header();
 ?>
 <div class="nav-container">
-    <?php 
+  <div class="nav-toggle">
+    <span>&#9776;</span>
+  </div>
+  <?php 
     wp_nav_menu([
         'theme_location' => "menu_light",
         'container' => 'nav',
-        'container_class' => 'menu navbar-expand-sm navbar-dark fixed-top',
-        'menu_class' => 'menu__list'
+        'menu_class' => 'menu__list',
+        'menu_id' => 'menuList',
     ]);
-    ?>
-  </div>
+  ?>
+</div>
 
   
 <div class="main-container">
-  <h1>Toutes les catégories</h1>
-  <div class="display-demandes-container">
+  <h1>Toutes les Catégories</h1>
+  <div class="display-signs-container">
     <?php
     // récupérer toutes les catégories
     $args = array(
@@ -34,7 +37,7 @@ get_header();
     if (!empty($categories)) :
       foreach ($categories as $category) :
     ?>
-        <div class="demande-item">
+        <div class="sign-item">
           <a href="<?php echo esc_url(get_category_link($category->term_id)); ?>">
             <h3><?php echo esc_html($category->name); ?></h3>
           </a>

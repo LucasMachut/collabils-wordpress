@@ -4,15 +4,18 @@
 get_header();
 ?>
 <div class="nav-container">
-    <?php 
+  <div class="nav-toggle">
+    <span>&#9776;</span>
+  </div>
+  <?php 
     wp_nav_menu([
         'theme_location' => "menu_light",
         'container' => 'nav',
-        'container_class' => 'menu navbar-expand-sm navbar-dark fixed-top',
-        'menu_class' => 'menu__list'
+        'menu_class' => 'menu__list',
+        'menu_id' => 'menuList',
     ]);
-    ?>
-  </div>
+  ?>
+</div>
 <div class="single-demande-container">
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
@@ -45,7 +48,7 @@ get_header();
     <p>Aucune demande trouvée.</p>
   <?php endif; ?>
 
-  <button class="button1"><a href="{% url 'soumission-signe' %}">Répondre à la demande</a></button>
+  <button class="button1"><a href="/soumettre-un-signe">Soumettre un signe</a></button>
 
 </div>
 

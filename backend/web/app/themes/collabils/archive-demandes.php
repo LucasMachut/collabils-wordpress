@@ -7,18 +7,23 @@
 get_header();
 ?>
 <div class="nav-container">
-    <?php 
+  <div class="nav-toggle">
+    <span>&#9776;</span>
+  </div>
+  <?php 
     wp_nav_menu([
         'theme_location' => "menu_light",
         'container' => 'nav',
-        'container_class' => 'menu navbar-expand-sm navbar-dark fixed-top',
-        'menu_class' => 'menu__list'
+        'menu_class' => 'menu__list',
+        'menu_id' => 'menuList',
     ]);
-    ?>
-  </div>
+  ?>
+</div>
+
 <div class="demandes-list">
   <h1>Toutes les demandes</h1>
-  <div class="display-demandes-container">
+    
+  <div class="display-signs-container">
     <?php
     // récupérer tous les CPT demande
     $args = array(
@@ -30,7 +35,7 @@ get_header();
     if ($query->have_posts()) :
       while ($query->have_posts()) : $query->the_post();
     ?>
-        <div class="demande-item">
+        <div class="sign-item">
           <a href="<?php the_permalink(); ?>">
             <h3><?php the_title(); ?></h3>
           </a>

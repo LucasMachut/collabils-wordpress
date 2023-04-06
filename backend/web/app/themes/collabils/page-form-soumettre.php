@@ -43,15 +43,18 @@ if (isset($_POST['signe_title']) && isset($_POST['signe_context']) && isset($_PO
 // Afficher le formulaire de création de signe
 get_header(); ?>
 <div class="nav-container">
-    <?php 
+  <div class="nav-toggle">
+    <span>&#9776;</span>
+  </div>
+  <?php 
     wp_nav_menu([
         'theme_location' => "menu_light",
         'container' => 'nav',
-        'container_class' => 'menu navbar-expand-sm navbar-dark fixed-top',
-        'menu_class' => 'menu__list'
+        'menu_class' => 'menu__list',
+        'menu_id' => 'menuList',
     ]);
-    ?>
-  </div>
+  ?>
+</div>
 
 <h1>Créer un signe</h1>
 
