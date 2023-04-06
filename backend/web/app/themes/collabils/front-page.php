@@ -8,17 +8,19 @@ get_header();
 <?php if ( is_user_logged_in()) : ?>
 
   <div class="nav-container">
-    <div class="nav-toggle">
-        <span>&#9776;</span>
-    </div>
-    <?php 
-        wp_nav_menu([
-            'theme_location' => "menu_light",
-            'container' => 'nav',
-            'menu_class' => 'menu__list',
-        ]);
-    ?>
+  <div class="nav-toggle">
+    <span>&#9776;</span>
+  </div>
+  <?php 
+    wp_nav_menu([
+        'theme_location' => "menu_light",
+        'container' => 'nav',
+        'menu_class' => 'menu__list',
+        'menu_id' => 'menuList',
+    ]);
+  ?>
 </div>
+
 
 <?php endif; ?>
 <main>
@@ -49,9 +51,10 @@ get_header();
 
     <script>
     document.querySelector('.nav-toggle').addEventListener('click', function () {
-    const navContainer = document.querySelector('.nav-container');
-    navContainer.classList.toggle('responsive');
+  const navContainer = document.querySelector('.nav-container');
+  navContainer.classList.toggle('responsive');
 });
+
 
 </script>
 
