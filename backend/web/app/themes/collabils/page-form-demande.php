@@ -63,9 +63,9 @@ get_header(); ?>
   ?>
 </div>
 
-<h1>Demander un signe</h1>
+<div class="main-container">
+  <h1>Demander un signe</h1>
 
-<div class="content-area">
   <form id="demande-form" method="post">
     <div class="form-item">
       <label for="demande-title">Titre de la demande :</label>

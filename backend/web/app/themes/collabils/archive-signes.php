@@ -22,7 +22,7 @@ get_header();
 </div>
 
   
-<div class="signes-list">
+<div class="main-container">
   <h1>Tous les Signes</h1>
   <div class="search-container">
     <!-- Ajoutez un formulaire HTML pour la barre de recherche -->
@@ -62,6 +62,7 @@ get_header();
 </div>
 
 <script src="<?php echo get_template_directory_uri() . '/assets/js/search.js' ?>"></script>
+<script src="<?php echo get_template_directory_uri() . '/assets/js/nav.js' ?>"></script>
 
 <?php
 get_footer();

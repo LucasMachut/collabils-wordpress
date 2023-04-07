@@ -1,6 +1,5 @@
 <?php wp_footer() ?>
-<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="./assets/js/nav"></script>
+<script src="<?php echo get_template_directory_uri() . '/assets/js/nav.js' ?>"></script>
 
 </body>
 </html>

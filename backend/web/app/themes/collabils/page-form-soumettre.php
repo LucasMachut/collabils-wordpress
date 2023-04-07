@@ -56,9 +56,9 @@ get_header(); ?>
   ?>
 </div>
 
-<h1>Créer un signe</h1>
 
-<div class="content-area">
+<div class="main-container">
+  <h1>Créer un signe</h1>
   <form id="signe-form" method="post">
     <div class="form-item">
       <label for="signe-title">Titre du signe :</label>

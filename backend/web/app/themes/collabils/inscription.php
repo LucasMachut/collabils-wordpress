@@ -133,8 +133,8 @@ get_header();
     <main id="main" class="site-main">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <h1><?php the_title(); ?></h1>
+                <div class="col-md-8 m-auto">
+                    <h1>Inscription</h1>
                     <?php if (isset($errors) && !empty($errors->errors)) : ?>
                         <div class="alert alert-danger">
                             <?php foreach ($errors->get_error_messages() as $error) : ?>
@@ -186,8 +186,8 @@ get_header();
                         <input type="date" name="date_diplome" id="date_diplome" class="input" value="<?php if (!empty($_POST['date_diplome'])) echo esc_attr($_POST['date_diplome']); ?>" required="required" />
                     </p>
 
-                    <p>
-                        <input type="submit" class="button" value="<?php _e('Register', 'collabils'); ?>" />
+                    <p class="text-center">
+                        <input type="submit" class="bouton1" value="<?php _e('Register', 'collabils'); ?>" />
                     </p>
                 </form>
             </div>

@@ -49,14 +49,13 @@ get_header();
       </div>
     </main>
 
-    <script>
-    document.querySelector('.nav-toggle').addEventListener('click', function () {
-  const navContainer = document.querySelector('.nav-container');
-  navContainer.classList.toggle('responsive');
-});
-
-
-</script>
+<!--script>
+      document.querySelector('.nav-toggle').addEventListener('click', function () {
+      const navContainer = document.querySelector('.nav-container');
+      navContainer.classList.toggle('responsive');
+    });
+</script-->
+<script src="./assets/js/nav"></script>
 
 <?php
 get_footer();

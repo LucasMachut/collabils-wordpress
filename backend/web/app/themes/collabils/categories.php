@@ -22,7 +22,7 @@ get_header();
 
   
 <div class="main-container">
-  <h1>Toutes les Catégories</h1>
+  <h1>Catégories</h1>
   <div class="display-signs-container">
     <?php
     // récupérer toutes les catégories
@@ -51,7 +51,6 @@ get_header();
   </div>
 </div>
 
-<script src="<?php echo get_template_directory_uri() . '/assets/js/search.js' ?>"></script>
 
 <?php
 get_footer();

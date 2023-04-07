@@ -20,7 +20,7 @@ get_header();
   ?>
 </div>
 
-<div class="demandes-list">
+<div class="main-container">
   <h1>Toutes les demandes</h1>
     
   <div class="display-signs-container">
