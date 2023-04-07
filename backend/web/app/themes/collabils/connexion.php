@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Page de connexion
+ * Template Name: Custom Login Page
  */
 
 // Rediriger l'utilisateur s'il est déjà connecté
@@ -9,17 +9,11 @@ if (is_user_logged_in()) {
     exit;
 }
 
-
-// Traiter le formulaire de connexion s'il est soumis
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $user = wp_signon($_POST);
-    if (!is_wp_error($user)) {
-        wp_safe_redirect(home_url());
-        exit;
-    }
+// Gérer les erreurs de connexion
+if (isset($_GET['login']) && $_GET['login'] == 'failed') {
+    $error = '<div class="alert alert-danger">Identifiant ou mot de passe incorrect.</div>';
 }
 
-// Afficher le formulaire de connexion
 get_header();
 ?>
 <div id="primary" class="content-area">
@@ -28,37 +22,28 @@ get_header();
             <div class="row">
                 <div class="col-md-6 offset-md-3">
                     <h1><?php the_title(); ?></h1>
-                    <?php if (isset($user) && is_wp_error($user)) : ?>
-                        <div class="alert alert-danger">
-                            <?php foreach ($user->get_error_messages() as $error) : ?>
-                                <p><?php echo $error; ?></p>
-                            <?php endforeach; ?>
-                        </div>
+                    <?php if (isset($error)) : ?>
+                        <?php echo $error; ?>
                     <?php endif; ?>
-                    <form method="post" enctype="multipart/form-data">
-                        <p>
-                            <label for="user_login"><?php _e('Username or Email', 'collabils'); ?><br />
-                                <input type="text" name="log" id="user_login" class="input" value="<?php echo esc_attr(wp_unslash($_POST['log'] ?? '')); ?>" size="25" /></label>
-                        </p>
-
-                        <p>
-                            <label for="password"><?php _e('Password', 'collabils'); ?><br />
-                                <input type="password" name="pwd" id="password" class="input" value="" size="25" /></label>
-                        </p>
-
-                        <p>
-                            <input type="submit" class="button" value="<?php _e('Log In', 'collabils'); ?>" />
-                        </p>
-                    </form>
-
-
+                    <?php
+                    $args = array(
+                        'echo' => true,
+                        'redirect' => home_url(),
+                        'form_id' => 'custom_loginform',
+                        'label_username' => __('Username or Email', 'collabils'),
+                        'label_password' => __('Password', 'collabils'),
+                        'label_remember' => __('Remember Me', 'collabils'),
+                        'label_log_in' => __('Log In', 'collabils'),
+                        'value_remember' => true
+                    );
+                    wp_login_form($args);
+                    ?>
                 </div>
             </div>
             <div class="redirect-inscription">
                 <p>Vous n'êtes pas encore inscrit ?</p>
                 <a href="<?php echo home_url('/registration/'); ?>"><button class="bouton1">inscription</button></a>
             </div>
-
         </div>
     </main>
 </div>

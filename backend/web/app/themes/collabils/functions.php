@@ -29,3 +29,24 @@ function enable_comments_for_signe_template($open, $post_id) {
     return $open;
 }
 add_filter('comments_open', 'enable_comments_for_signe_template', 10, 2);
+
+
+//LOGIN FUNCTIONS
+
+function redirect_login_page() {
+    $login_url  = home_url('/login');
+    $url = basename($_SERVER['REQUEST_URI']);
+
+    if ($url == "wp-login.php" && $_SERVER['REQUEST_METHOD'] == 'GET') {
+        wp_redirect($login_url);
+        exit;
+    }
+}
+add_action('init', 'redirect_login_page');
+
+function login_failed() {
+    $login_url = home_url('/login');
+    wp_redirect($login_url . '?login=failed');
+    exit;
+}
+add_action('wp_login_failed', 'login_failed');
