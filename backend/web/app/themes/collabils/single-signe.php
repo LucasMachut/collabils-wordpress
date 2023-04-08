@@ -61,7 +61,9 @@ get_header();
 
     <div class="contexte-container">
       <h3>Contexte d'utilisation:</h3>
+      <p class="text-center">
      <?php echo get_post_meta( get_the_ID(), '_signe_context', true ); ?>
+      </p>
     </div>
 
   <?php endwhile; else: ?>

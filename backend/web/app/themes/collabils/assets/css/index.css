@@ -512,6 +512,9 @@ h3{
   .definition-container {
     padding: 20px;
   }
+  .definition-container p{
+    text-align: center;
+  }
   .contexte-container {
     padding: 20px;
   }
